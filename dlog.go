@@ -5,6 +5,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -17,6 +18,16 @@ type Logger struct {
 	metadata  map[string]interface{}
 	out       *bufio.Writer
 	sortOrder []string
+}
+
+var std = New(os.Stderr, map[string]interface{}{})
+
+func Output(data map[string]interface{}) {
+	std.Output(data)
+}
+
+func SortOrder(order []string) {
+	std.SortOrder(order)
 }
 
 func New(out io.Writer, metadata map[string]interface{}) *Logger {
