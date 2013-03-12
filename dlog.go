@@ -13,6 +13,10 @@ import (
 	"time"
 )
 
+type DataLogger interface {
+	Output(data map[string]interface{})
+}
+
 type Logger struct {
 	mu        sync.Mutex
 	metadata  map[string]interface{}

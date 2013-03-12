@@ -17,7 +17,7 @@ func TestGenerate(t *testing.T) {
 		"b": "some words",
 	})
 	log.SortOrder([]string{"t", "b"})
-	
+
 	log.Output(map[string]interface{}{
 		"c": "there",
 	})
